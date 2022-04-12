@@ -19,7 +19,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     </script>
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <body class="flex flex-col h-screen justify-between items-center mx-auto mx-32 dark:bg-black dark:text-white">
+      <body class="m-0 flex flex-col h-screen justify-between items-center mx-auto px-32 dark:bg-black dark:text-white w-full border-[30px] border-[#FF005C]">
         <main class="w-full flex h-full space-x-20">
           <figure class="w-1/5 flex justify-center items-center">
             ${images.map((img, i) => getPlusSign(i) + getImage(img, widths[i], heights[i])).join('')}        
