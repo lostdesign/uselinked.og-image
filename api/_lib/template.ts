@@ -21,8 +21,8 @@ export function getHtml(parsedReq: ParsedRequest) {
           </figure>
           <article class="w-4/5 space-y-6 p-12 h-full flex flex-col justify-center">
             <h1 class="text-8xl font-black">${emojify(md ? marked(title) : sanitizeHtml(title))}</h1>
-            <h2 class="text-4xl leading-normal">${emojify(md ? marked(description) : sanitizeHtml(description))}</h2>
-            <h3 class="text-2xl text-gray-400">${emojify(md ? marked(readTime + ' minute read') : sanitizeHtml(readTime + ' minute read'))}</h3>
+            <h2 class="text-6xl leading-normal">${emojify(md ? marked(description) : sanitizeHtml(description))}</h2>
+            <h3 class="text-3xl text-gray-400">${emojify(md ? marked(readTime + ' minute read') : sanitizeHtml(readTime + ' minute read'))}</h3>
           </article>
         </main>
         <footer class="self-end item-end w-full text-center p-6">
