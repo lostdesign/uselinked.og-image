@@ -14,7 +14,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <body class="flex flex-col space-y-12 h-screen justify-between items-center mx-auto mx-48">
+      <body class="flex flex-col space-y-12 h-screen justify-between items-center mx-auto mx-24">
         <main class="w-full flex h-full space-x-24">
           <figure class="w-1/5 flex justify-center items-center">
             ${images.map((img, i) => getPlusSign(i) + getImage(img, widths[i], heights[i])).join('')}        
