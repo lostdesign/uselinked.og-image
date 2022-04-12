@@ -7,14 +7,19 @@ const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 
 export function getHtml(parsedReq: ParsedRequest) {
-    const { title, description, readTime, md, images, widths, heights } = parsedReq;
+    const { title, description, theme, readTime, md, images, widths, heights } = parsedReq;
     return `<!DOCTYPE html>
-<html>
+<html class="${theme}">
     <meta charset="utf-8">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <body class="flex flex-col h-screen justify-between items-center mx-auto mx-32">
+      <body class="flex flex-col h-screen justify-between items-center mx-auto mx-32 dark:bg-black dark:text-white">
         <main class="w-full flex h-full space-x-20">
           <figure class="w-1/5 flex justify-center items-center">
             ${images.map((img, i) => getPlusSign(i) + getImage(img, widths[i], heights[i])).join('')}        
@@ -31,7 +36,7 @@ export function getHtml(parsedReq: ParsedRequest) {
 
 function getImage(src: string, width ='auto', height = '225') {
     return `<img
-        class="logo"
+        class="dark:drop-shadow-[0_30px_30px_rgba(255,255,255,0.1)]"
         alt="Generated Image"
         src="${sanitizeHtml(src)}"
         width="${sanitizeHtml(width)}"
