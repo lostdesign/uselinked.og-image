@@ -14,20 +14,17 @@ export function getHtml(parsedReq: ParsedRequest) {
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <body class="flex flex-col space-y-12 h-screen justify-between items-center mx-auto mx-24">
-        <main class="w-full flex h-full space-x-24">
+      <body class="flex flex-col h-screen justify-between items-center mx-auto mx-32">
+        <main class="w-full flex h-full space-x-20">
           <figure class="w-1/5 flex justify-center items-center">
             ${images.map((img, i) => getPlusSign(i) + getImage(img, widths[i], heights[i])).join('')}        
           </figure>
           <article class="w-4/5 space-y-6 p-12 h-full flex flex-col justify-center">
-            <h1 class="text-8xl font-black">${emojify(md ? marked(title) : sanitizeHtml(title))}</h1>
-            <h2 class="text-6xl leading-normal">${emojify(md ? marked(description) : sanitizeHtml(description))}</h2>
-            <h3 class="text-3xl text-gray-400">${emojify(md ? marked(readTime + ' minute read') : sanitizeHtml(readTime + ' minute read'))}</h3>
+            <h1 class="text-7xl font-black">${emojify(md ? marked(title) : sanitizeHtml(title))}</h1>
+            <h2 class="text-5xl leading-normal">${emojify(md ? marked(description) : sanitizeHtml(description))}</h2>
+            <h3 class="text-4xl text-gray-400">${readTime + ' minute read'}</h3>
           </article>
         </main>
-        <footer class="self-end item-end w-full text-center p-6">
-          <h2 class="text-2xl">uselinked.com/blog</h2>
-        </footer>
       </body>
 </html>`;
 }
